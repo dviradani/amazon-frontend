@@ -1,16 +1,21 @@
 import { useState } from 'react'
-
 import './App.css'
-
+import { HomePage } from './Pages/HomePage'
+import { Routes, Route, Link, BrowserRouter, NavLink } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar';
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
+        <BrowserRouter>
     <div className='app'>
-      <header className='app-header'>
-        <a href="/">eshop</a>
-      </header>
+      <Navbar/>
+      <main>
+        <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        </Routes>
+          <HomePage></HomePage>
+      </main>
     </div>
+        </BrowserRouter>
   )
 }
 
