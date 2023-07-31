@@ -1,13 +1,14 @@
 import React, { useContext, useReducer, useEffect } from 'react'
 import { store } from '../../Context/store';
 import { useNavigate, Link } from 'react-router-dom';
-import { CLEAR_CART, GET_FAIL, GET_REQUEST } from '../../Reducers/Actions';
+import { CLEAR_CART, GET_FAIL, GET_REQUEST, GET_SUCCESS } from '../../Reducers/Actions';
 import { toast } from 'react-toastify';
 import { Card, Row, Col, ListGroup, Button } from "react-bootstrap";
 import CheckoutSteps from '../../Components/CheckoutSteps/CheckoutSteps';
 import Title from '../../Components/Title/Title';
 import Loading from '../../Components/Loading/Loading'
 import './PlaceOrderPage.css'
+import axios from 'axios';
 
 const reducer = (state, { type }) => {
     switch (type) {
@@ -17,7 +18,6 @@ const reducer = (state, { type }) => {
             return { ...state, loading: false };
         case GET_FAIL:
             return { ...state, loading: false };
-
         default:
             return state;
     }
@@ -38,12 +38,11 @@ const PlaceOrderPage = () => {
                 orderItems: cart.cartItems, shippingAddress: cart.shippingAddress, paymentMethod: cart.paymentMethod
                 , itemsPrice: cart.itemsPrice, shippingPrice: cart.shippingPrice, taxPrice: cart.taxPrice, totalPrice: cart.totalPrice,
             },
-                {
-
-                    headers: {
-                        authrization: userInfo.token
-                    }
-                })
+            {
+                headers: {
+                    authorization:  userInfo.token
+                }
+            })
             dispatch({ type: GET_SUCCESS })
             ctxDispatch({ type: CLEAR_CART })
             navigate(`/order/${data.order._id}`)

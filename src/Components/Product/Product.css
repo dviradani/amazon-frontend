@@ -21,12 +21,12 @@
     object-fit: contain;
 }
 
-.card-body {
+/* .card-body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 200px;
-}
+} */
 
 .text-shortener{
     overflow: hidden;
