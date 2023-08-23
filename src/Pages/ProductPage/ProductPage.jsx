@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useReducer } from 'react'
-import MessageBox from '../../MessageBox/MessageBox';
+import MessageBox from '../../Components/MessageBox/MessageBox';
 import Loading from '../../Components/Loading/Loading';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import { AddToCartHandler } from '../../services/addToCart';
 import CartDescription from '../../Components/CartDescription/CartDescription';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
@@ -10,6 +10,7 @@ import { store } from '../../Context/store'
 import { toast } from 'react-toastify'
 import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from '../../Reducers/Actions';
 import {Row , Col} from'react-bootstrap';
+import './ProductPage.css';
 
 
 const reducer = (state, { type, payload }) => {
@@ -84,16 +85,16 @@ const ProductPage =  () => {
     ) : (
       <div>
         <Row>
-          <Col md={6}>
-            <img
+          <Col md={4}>
+            <img 
               src={`${product.image}`}
               alt={product.title}
-              className="card-img-top card-image"
+              className="card-img-top card-image product-page-img"
             />
           </Col>
 
-          <Col md={3}>
-            <ProductDescription {...product} />
+          <Col md={5}>
+            <ProductDescription {...product} className="product-page-desc" />
           </Col>
 
           <Col md={3}>

@@ -4,7 +4,7 @@ import axios from "axios";
 import './HomePage.css';
 import { HomePageReducer, initialState } from '../../Reducers/HomePageReducer';
 import Loading from '../../Components/Loading/Loading';
-import MessageBox from '../../MessageBox/MessageBox';
+import MessageBox from '../../Components/MessageBox/MessageBox';
 import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from "../../Reducers/Actions";
 
 

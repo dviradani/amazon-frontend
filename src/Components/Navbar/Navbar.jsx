@@ -5,6 +5,7 @@ import './Navbar.css'
 import { useContext } from 'react';
 import { store } from '../../Context/store';
 import { USER_SIGNOUT } from '../../Reducers/Actions';
+import SearchBox from '../SearchBox/SearchBox';
 const NavBar = () => {
     const navigate = useNavigate();
     const {state , dispatch : ctxDispatch} = useContext(store);
@@ -16,8 +17,8 @@ const NavBar = () => {
     }
   return (
     <header className="app-header">
-      <Navbar bg='dark' variant="dark">
-        <Link onClick={() => {navigate(-1)}} className='ms-5'>
+      <Navbar bg='dark' variant="dark" className='my-navbar'>
+        <Link onClick={() => {navigate(-1)}} className='ms-5 back-link'>
             Back
         </Link>
 
@@ -29,7 +30,7 @@ const NavBar = () => {
         </LinkContainer>
 
         <nav className="d-flex mx-auto align-items-center">
-        <input type="text" />
+        <SearchBox/>
         </nav>
 
         <Link to='/cart' className='nav-link me-4 ms-4'>

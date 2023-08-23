@@ -1,6 +1,6 @@
 import React from 'react'
 import Loading from '../../Components/Loading/Loading'
-import MessageBox from '../../MessageBox/MessageBox'
+import MessageBox from '../../Components/MessageBox/MessageBox'
 import Title from '../../Components/Title/Title'
 import { Card, Col, ListGroup, Row } from 'react-bootstrap'
 import { Link, useNavigate, useParams } from 'react-router-dom'

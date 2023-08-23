@@ -1,5 +1,5 @@
 import React from 'react'
-import MessageBox from '../../MessageBox/MessageBox'
+import MessageBox from '../../Components/MessageBox/MessageBox'
 import { Link } from 'react-router-dom'
 import { Button, Col, ListGroup, Row } from 'react-bootstrap'
 import './Cart.css'

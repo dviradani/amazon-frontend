@@ -12,6 +12,8 @@ export const SignUpPage = () => {
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [name, setName] = useState("");
+
+  //----------------------------------------------------------------//
   const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get("redirect");
@@ -26,13 +28,6 @@ export const SignUpPage = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    // try {
-    //   const { data } = await axios.post("/user/signin", { password, email });
-    //   ctxDispatch({ type: USER_SIGNIN, payload: data });
-    //   navigate(redirect);
-    // } catch (error) {
-    //   toast.error(error.message);
-    // }
     if(password!== confirmPass) {
         toast.error("Passwords do not match");
         return;

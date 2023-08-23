@@ -12,6 +12,7 @@ import PaymentPage from './Pages/PaymentPage/PaymentPage';
 import PlaceOrderPage from './Pages/PlaceOrderPage/PlaceOrderPage';
 import ProductPage from './Pages/ProductPage/ProductPage';
 import OrderPage from './Pages/OrderPage/OrderPage';
+import SearchPage from './Pages/SearchPage/SearchPage';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/placeorder" element={<PlaceOrderPage />} />
         <Route path="/product/:token" element={<ProductPage />} />
         <Route path="/order/:id" element={<OrderPage/>} />
+        <Route path="/search" element={<SearchPage/>} />
         </Routes>
       </main>
     </div>
